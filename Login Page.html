@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Login Page</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      width: 300px;
+      margin: 100px auto;
+      background-color: #fff;
+      border: 1px solid #ccc;
+      padding: 20px;
+    }
+
+    h2 {
+      text-align: center;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: block;
+      font-weight: bold;
+    }
+
+    .form-group input {
+      width: 100%;
+      padding: 5px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    .form-group input[type="submit"] {
+      background-color: #4CAF50;
+      color: #fff;
+      cursor: pointer;
+    }
+
+    .form-group input[type="submit"]:hover {
+      background-color: #45a049;
+    }
+
+    .error-message {
+      color: red;
+    }
+
+    .forgot-password {
+      text-align: center;
+    }
+  </style>
+</head>
+<body style="background-color: plum;">
+  <div class="container">
+    <h2>Login</h2>
+    <form onsubmit="login(event)">
+      <div class="form-group">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required>
+      </div>
+      <div class="form-group">
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+      </div>
+      <div class="form-group">
+        <input type="submit" value="Login">
+      </div>
+    </form>
+    <div id="error" class="error-message"></div>
+    <div class="forgot-password">
+      <a href="#" onclick="forgotPassword(event)">Forgot Password?</a>
+    </div>
+  </div>
+
+  <script>
+    function login(event) {
+      event.preventDefault(); // Prevent form submission
+
+      var username = document.getElementById("username").value;
+      var password = document.getElementById("password").value;
+
+      // Simple username and password validation
+      if (username === "poornakeerthi" && password === "1903") {
+        alert("Login successful!");
+        // You can redirect the user to another page here
+      } else {
+        var error = document.getElementById("error");
+        error.textContent = "Invalid username or password.";
+      }
+    }
+
+    function forgotPassword(event) {
+      event.preventDefault(); // Prevent link navigation
+
+      // You can implement the logic to handle the forgot password functionality here
+      alert("Forgot Password clicked!");
+    }
+  </script>
+</body>
+</html>
